@@ -39,7 +39,7 @@ import matplotlib.pyplot as plt
 
 # Load msci country index return series
 
-path_to_data = '../data/'
+path_to_data = 'data/'
 # N = 24
 N = 10
 df = pd.read_csv(os.path.join(path_to_data, 'msci_country_indices.csv'),
@@ -351,7 +351,7 @@ sim_mv = (X @ weights_mv).rename('Mean-Variance Portfolio')
 sim_ls = (X @ weights_ls).rename('Min Tracking Error Portfolio (by Least Squares)')
 
 sim = pd.concat({
-    'benchmark': y,
+    'benchmark yessirski': y,
     'mean-variance': sim_mv,
     'least-squares': sim_ls,
 }, axis=1).dropna()
@@ -360,3 +360,4 @@ sim
 np.log((1 + sim).cumprod()).plot()
 
 
+plt.show()
